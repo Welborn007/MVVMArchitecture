@@ -1,18 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fancy="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:id="@+id/splashImage"
+            android:background="@drawable/splash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/WelcomeScreen"
+            android:visibility="gone"
+            android:background="@drawable/moofwd_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:src="@drawable/moofwd_logo"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/circleHolder"
+                android:layout_centerInParent="true"
+                android:background="@drawable/transparent_circular"
+                android:layout_width="320dp"
+                android:layout_height="320dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/welcomeString"
+                    android:text="@string/welcome"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:id="@+id/viewData"
+                    android:background="@color/white"
+                    android:layout_below="@+id/welcomeString"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/welcomeMessage"
+                    android:text="@string/welcomeString"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/viewData"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/getStarted"
+                fancy:fb_textColor="@color/white"
+                fancy:fb_borderColor="@color/Gray"
+                fancy:fb_borderWidth="0.5dp"
+                fancy:fb_defaultColor="@color/orange"
+                fancy:fb_focusColor="@color/colorHighlight"
+                fancy:fb_textSize="14sp"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/circleHolder"
+                fancy:fb_text="@string/getStarted"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Dashboard"
+            android:visibility="gone"
+            android:background="@drawable/moofwd_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:src="@drawable/moofwd_logo"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:id="@+id/ThreeCircleHolder"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profile"
+                    android:src="@drawable/moofwd_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/subjects"
+                        android:src="@drawable/moofwd_subjects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/contacts"
+                        android:src="@drawable/moofwd_contacts"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/welcometoMoofwd"
+                fancy:fb_textColor="@color/white"
+                fancy:fb_borderColor="@color/Gray"
+                fancy:fb_borderWidth="0.5dp"
+                fancy:fb_defaultColor="@color/orange"
+                fancy:fb_focusColor="@color/colorHighlight"
+                fancy:fb_textSize="14sp"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/ThreeCircleHolder"
+                fancy:fb_text="@string/welcometoMooFwd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

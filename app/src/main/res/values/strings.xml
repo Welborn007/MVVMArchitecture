@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MVVM Architecture</string>
+
+    <string name="welcome">WELCOME</string>
+    <string name="welcomeString">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. </string>
+
+    <string name="getStarted">GET STARTED</string>
+    <string name="welcometoMooFwd">WELCOME TO MOOFWD</string>
+
+    <string name="profile">PROFILE</string>
+    <string name="contacts">CONTACTS</string>
+    <string name="subjects">SUBJECTS</string>
+
 </resources>
