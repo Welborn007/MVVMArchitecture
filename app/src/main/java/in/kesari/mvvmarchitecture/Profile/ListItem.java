@@ -6,7 +6,7 @@ public class ListItem{
 	private String address;
 	private String phone;
 	private String city;
-	private long codebar;
+	private String codebar;
 	private String campus;
 	private int V;
 	private String name;
@@ -54,12 +54,12 @@ public class ListItem{
 		return city;
 	}
 
-	public void setCodebar(long codebar){
-		this.codebar = codebar;
+	public String getCodebar() {
+		return codebar;
 	}
 
-	public long getCodebar(){
-		return codebar;
+	public void setCodebar(String codebar) {
+		this.codebar = codebar;
 	}
 
 	public void setCampus(String campus){

@@ -2,6 +2,9 @@ package in.kesari.mvvmarchitecture.Profile;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -41,6 +44,8 @@ public class ProfileActivity extends AppCompatActivity {
             activityProfileBinding.campus.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getCampus());
             activityProfileBinding.city.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getCity());
             activityProfileBinding.address.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getAddress());
+            activityProfileBinding.codeBar.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getCodebar());
+
         });
 
     }
