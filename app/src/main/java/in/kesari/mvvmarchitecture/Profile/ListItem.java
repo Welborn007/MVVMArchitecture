@@ -12,7 +12,7 @@ public class ListItem{
 	private String name;
 	private String id;
 	private String email;
-	private long dni;
+	private String dni;
 
 	public void setImage(String image){
 		this.image = image;
@@ -102,12 +102,12 @@ public class ListItem{
 		return email;
 	}
 
-	public void setDni(long dni){
-		this.dni = dni;
+	public String getDni() {
+		return dni;
 	}
 
-	public long getDni(){
-		return dni;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	@Override

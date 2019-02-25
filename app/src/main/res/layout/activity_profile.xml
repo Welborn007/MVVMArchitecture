@@ -41,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="James Brown"
                 android:textColor="#58585A"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -65,7 +64,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:text="9029825147"
                     android:textColor="#58585A"
                     android:textSize="16sp" />
 
@@ -84,11 +82,11 @@
                     android:src="@drawable/moofwd_mail" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/Email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:text="machadowelborn@gmail.com"
                     android:textColor="#58585A"
                     android:textSize="16sp" />
 
@@ -129,10 +127,10 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="9029825147"
                 android:textColor="#58585A"
                 android:textSize="16sp" />
 
@@ -156,10 +154,10 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/career"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Medicine"
                 android:textColor="#58585A"
                 android:textSize="16sp" />
 
@@ -183,10 +181,10 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/campus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Washington"
                 android:textColor="#58585A"
                 android:textSize="16sp" />
 
@@ -204,16 +202,16 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="City:"
                 android:textColor="#58585A"
+                android:text="City"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Washington"
                 android:textColor="#58585A"
                 android:textSize="16sp" />
 
@@ -235,10 +233,10 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="8731 Elmwood Avenue Noblesville IN 46060"
                 android:textColor="#58585A"
                 android:textSize="16sp" />
 

@@ -1,25 +1,26 @@
 package in.kesari.mvvmarchitecture.Profile;
 
-import android.app.Application;
+import android.app.Activity;
 
-import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import in.kesari.mvvmarchitecture.Contacts.RetrofitRepository;
 
-public class UserProfileViewModel extends AndroidViewModel {
+public class UserProfileViewModel extends ViewModel {
 
-    private LiveData<List<Profile>> profileLiveData;
+    private LiveData<Profile> profile;
+    private RetrofitRepository retrofitRepository = new RetrofitRepository();
+
+    public LiveData<Profile> getProfile(Activity activity) {
+        if(profile == null){
+            profile = retrofitRepository.getTopCoupon(activity);
+        }
+        return profile;
+    }
+
+  /*  private MutableLiveData<Profile> profileLiveData;
     //this is the data that we will fetch asynchronously
-    private LiveData<List<Profile>> getallProfile;
+    private static MutableLiveData<Profile> getallProfile = new MutableLiveData<Profile>();
     private UserRepository repository;
 
     public UserProfileViewModel(@NonNull Application application) {
@@ -44,16 +45,16 @@ public class UserProfileViewModel extends AndroidViewModel {
         repository.deleteAllNotes();
     }
 
-    public LiveData<List<Profile>> getAllNotes() {
+    public MutableLiveData<Profile> getAllNotes() {
         return profileLiveData;
     }
 
-   /* public LiveData<List<Profile>> getUser() {
+    public LiveData<Profile> getUser() {
 
         getallProfile = getAllNotes();
 
         if (getallProfile == null) {
-            getallProfile = new MutableLiveData<List<Profile>>();
+            getallProfile = new MutableLiveData<Profile>();
             //we will load it asynchronously from server in this method
 
             Retrofit retrofit = new Retrofit.Builder()
@@ -62,7 +63,7 @@ public class UserProfileViewModel extends AndroidViewModel {
                     .build();
 
             Webservice api = retrofit.create(Webservice.class);
-            Call<List<Profile>> call = api.getProfile();
+            Call<Profile> call = api.getProfile();
 
 
             call.enqueue(new Callback<Profile>() {

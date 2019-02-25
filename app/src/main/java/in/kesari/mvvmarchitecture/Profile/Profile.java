@@ -7,24 +7,27 @@ import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
-import androidx.lifecycle.LiveData;
-import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverter;
 
-@Entity(tableName = "profile_table")
 public class Profile {
 
 	@PrimaryKey(autoGenerate = true)
 	private int id;
 
-	private String detail;
+	private Detail detail;
 	private String status;
 
-	public Profile(String detail, String status) {
+	public Detail getDetail() {
+		return detail;
+	}
+
+	public void setDetail(Detail detail) {
 		this.detail = detail;
+	}
+
+	public void setStatus(String status) {
 		this.status = status;
-		storedStringToMyObjects(detail);
 	}
 
 	public void setId(int id) {
@@ -33,10 +36,6 @@ public class Profile {
 
 	public int getId() {
 		return id;
-	}
-
-	public String getDetail() {
-		return detail;
 	}
 
 	public String getStatus() {
