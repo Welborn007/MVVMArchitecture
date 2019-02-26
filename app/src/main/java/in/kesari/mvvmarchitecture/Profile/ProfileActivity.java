@@ -2,15 +2,15 @@ package in.kesari.mvvmarchitecture.Profile;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
+
+import com.bumptech.glide.Glide;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import in.kesari.mvvmarchitecture.R;
+import in.kesari.mvvmarchitecture.UserProfileViewModel;
 import in.kesari.mvvmarchitecture.databinding.ActivityProfileBinding;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -45,6 +45,12 @@ public class ProfileActivity extends AppCompatActivity {
             activityProfileBinding.city.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getCity());
             activityProfileBinding.address.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getAddress());
             activityProfileBinding.codeBar.setText(viewModel.getProfile(this).getValue().getDetail().getList().get(0).getCodebar());
+
+            //There was 1 cause:
+            //    javax.net.ssl.SSLHandshakeException(java.security.cert.CertPathValidatorException: Trust anchor for certification path not found.)
+            //viewModel.getProfile(this).getValue().getDetail().getList().get(0).getImage();
+
+            Glide.with(this).load("https://www.rottmair.de/profiles/Sebastian_Rottmair.jpg").into(activityProfileBinding.profileImage);
 
         });
 

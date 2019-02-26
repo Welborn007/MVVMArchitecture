@@ -1,11 +1,10 @@
-package in.kesari.mvvmarchitecture.Profile;
+package in.kesari.mvvmarchitecture;
 
+import in.kesari.mvvmarchitecture.Profile.Profile;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface Webservice {
-
-
 
     /**
      * @GET declares an HTTP GET request
